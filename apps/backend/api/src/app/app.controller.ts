@@ -1,11 +1,8 @@
 import { Controller } from '@nestjs/common';
 
-// import { User as UserModel, Post as PostModel, Prisma } from '@prisma/client';
-
 @Controller()
 export class AppController {
-  constructor() {}
-
+  // constructor() {}
   /* @Get('post/:id')
   async getPostById(@Param('id') id: string): Promise<PostModel> {
     return this.prismaService.post.findUnique({ where: { id: Number(id) } });
