@@ -1,7 +1,5 @@
 import { Component } from '@angular/core';
 
-class NavigationEvent {}
-
 @Component({
   selector: 'ss-root',
   templateUrl: './app.component.html',
@@ -13,5 +11,6 @@ export class AppComponent {
 
   onActivate($event: any) {
     this.is404 = $event.constructor.name === '_404PageComponent';
+    console.log(`$event: `, $event);
   }
 }
