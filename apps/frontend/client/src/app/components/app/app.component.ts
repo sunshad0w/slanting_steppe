@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { DataBusService } from '../../core/services/data-bus.service';
 
 @Component({
   selector: 'ss-root',
@@ -9,8 +10,9 @@ export class AppComponent {
   title = 'frontend-client';
   is404 = false;
 
-  onActivate($event: any) {
-    this.is404 = $event.constructor.name === '_404PageComponent';
-    console.log(`$event: `, $event);
+  constructor(private DataBusService: DataBusService) {
+    this.DataBusService.take('is404', false).subscribe((is404) => {
+      this.is404 = is404;
+    });
   }
 }
