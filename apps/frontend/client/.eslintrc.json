@@ -17,7 +17,7 @@
           "error",
           {
             "type": "element",
-            "prefix": "slanting-steppe",
+            "prefix": "ss",
             "style": "kebab-case"
           }
         ]

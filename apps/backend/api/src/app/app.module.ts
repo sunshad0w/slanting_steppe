@@ -11,7 +11,6 @@ import { AppResolver } from './app.resolver';
   imports: [
     TypeOrmModule.forRoot({ ...environment.connection }),
     GraphQLModule.forRoot<ApolloDriverConfig>({
-      // context: ({ req }) => ({ req }),
       playground: true,
       driver: ApolloDriver,
       autoSchemaFile: 'schema.gql',

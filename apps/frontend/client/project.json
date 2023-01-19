@@ -3,7 +3,7 @@
   "$schema": "../../../node_modules/nx/schemas/project-schema.json",
   "projectType": "application",
   "sourceRoot": "apps/frontend/client/src",
-  "prefix": "slanting-steppe",
+  "prefix": "ss",
   "targets": {
     "build": {
       "executor": "@angular-devkit/build-angular:browser",
@@ -19,7 +19,15 @@
           "apps/frontend/client/src/favicon.ico",
           "apps/frontend/client/src/assets"
         ],
-        "styles": ["apps/frontend/client/src/styles.scss"],
+        "styles": [
+          "apps/frontend/client/src/styles.scss",
+          "./node_modules/hamburgers/_sass/hamburgers/hamburgers.scss",
+          "./node_modules/@angular/cdk/overlay-prebuilt.css",
+          "./node_modules/ngx-simple-modal/styles/simple-modal.scss"
+        ],
+        "stylePreprocessorOptions": {
+          "includePaths": ["apps/frontend/client/src/style"]
+        },
         "scripts": []
       },
       "configurations": {
@@ -52,6 +60,8 @@
     "serve": {
       "executor": "@angular-devkit/build-angular:dev-server",
       "options": {
+        "host": "0.0.0.0",
+        "disableHostCheck": true,
         "port": 4200,
         "proxyConfig": "apps/frontend/client/proxy.conf.json"
       },

@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'slanting-steppe-root',
+  selector: 'ssa-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })

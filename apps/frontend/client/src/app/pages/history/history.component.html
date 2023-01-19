@@ -1,0 +1,28 @@
+<div class="history page">
+  <div class="top">
+    <div class="description">
+      <div class="big">
+        Зачем иркутскому купцу строить каменную церковь в отдалённой деревне? На
+        сколько лет может растянуться открытие почтового отделения? Кого можно
+        считать основателем Косой Степи?
+      </div>
+      <div class="small">
+        Ответы на эти и многие другие вопросы вы узнаете, ознакомившись с
+        историей Косой Степи. Для более подробной информации нажимайте на год на
+        таймлайне. <br /><br />
+        <i>Исследования по истории села провёл краевед Игорь Жидиль</i>
+      </div>
+    </div>
+  </div>
+  <div class="timeline">
+    <div class="timeline-item" *ngFor="let item of items">
+      <div class="title">{{ item.title }}</div>
+      <div class="middle">
+        <div class="point-container" (click)="showHistoryPopup(item)">
+          <div class="point"></div>
+        </div>
+      </div>
+      <div class="short">{{ item.short }}</div>
+    </div>
+  </div>
+</div>

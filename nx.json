@@ -3,7 +3,7 @@
   "cli": {
     "packageManager": "yarn"
   },
-  "npmScope": "slanting-steppe",
+  "npmScope": "ss",
   "tasksRunnerOptions": {
     "default": {
       "runner": "@nrwl/nx-cloud",
@@ -51,7 +51,8 @@
       "unitTestRunner": "jest"
     },
     "@nrwl/angular:component": {
-      "style": "scss"
+      "style": "scss",
+      "changeDetection": "OnPush"
     }
   }
 }

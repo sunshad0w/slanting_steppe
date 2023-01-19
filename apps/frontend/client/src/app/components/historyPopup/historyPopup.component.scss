@@ -1,0 +1,35 @@
+.historyPopup {
+  padding: min(60px, 8vw) min(75px, 10vw);
+
+  .image {
+    text-align: center;
+    margin-bottom: 30px;
+    img {
+      width: 100%;
+    }
+    &--description {
+      margin-top: 10px;
+      font-style: italic;
+      font-weight: 400;
+      font-size: 11px;
+      line-height: 13px;
+      text-align: left;
+      color: #9e9e9c;
+    }
+  }
+  .description {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+  }
+}
+
+.close {
+  position: absolute;
+  top: 1px;
+  right: 2px;
+  font-family: monospace;
+  font-size: 1rem;
+  padding: 5px 8px;
+}

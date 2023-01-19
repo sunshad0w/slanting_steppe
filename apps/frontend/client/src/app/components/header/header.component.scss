@@ -1,0 +1,73 @@
+@import 'mixin';
+@import 'variables';
+
+.burger {
+  position: absolute;
+}
+
+.navigation-links {
+  &.desktop {
+    padding: 10px 20px 5px;
+    display: inline-grid;
+    grid-template-columns: auto auto auto auto auto auto;
+    grid-gap: 32px;
+    align-items: center;
+    //position: fixed;
+    //background: rgba(255, 255, 255, 0.7);
+    //border-bottom-right-radius: 10px;
+  }
+  &.mobile {
+    display: grid;
+    position: absolute;
+    gap: 9px;
+    padding: 20px;
+    top: 60px;
+    background: rgba(255, 255, 255, 1);
+    border-bottom-right-radius: 10px;
+    &.main {
+      border-top-right-radius: 10px;
+    }
+    a {
+      text-shadow: 0 0 5px rgb(0 0 0 / 20%);
+    }
+  }
+
+  a {
+    color: #62bed5;
+    text-decoration: none;
+    &.active-link {
+      color: #b0cb1f;
+    }
+  }
+}
+
+.header {
+  z-index: 10;
+  position: relative;
+  width: 100%;
+  height: $header-height-desktop;
+  @include media-down($media-md) {
+    height: $header-height-mobile;
+  }
+  &.main {
+    position: absolute;
+  }
+}
+
+.lines {
+  display: block;
+  width: 100%;
+  margin-top: -20px;
+  padding-bottom: 16px;
+}
+
+.hart {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  img {
+    width: 45px;
+  }
+}

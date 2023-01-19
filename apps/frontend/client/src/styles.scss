@@ -1,1 +1,35 @@
-/* You can add global styles to this file, and also import other style files */
+@import 'style/mixin';
+@import 'style/variables';
+@import 'style/modal';
+.hamburger-inner,
+.hamburger-inner::before,
+.hamburger-inner::after,
+.hamburger.is-active .hamburger-inner,
+.hamburger.is-active .hamburger-inner::before,
+.hamburger.is-active .hamburger-inner::after {
+  background-color: #b0cb1f !important;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap');
+
+.mobile {
+  @include media-up($media-md) {
+    display: none !important;
+  }
+}
+
+.desktop {
+  @include media-down($media-md) {
+    display: none !important;
+  }
+}
+
+body {
+  font-family: 'Montserrat', serif;
+  padding: 0;
+  margin: 0;
+}
+
+* {
+  box-sizing: border-box;
+}

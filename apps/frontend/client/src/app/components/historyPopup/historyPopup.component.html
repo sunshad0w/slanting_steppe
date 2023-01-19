@@ -1,0 +1,13 @@
+<div class="modal-content historyPopup">
+  <div class="close mobile" (click)="close()">x</div>
+  <div class="image">
+    <img [src]="image" alt="" *ngIf="image" />
+    <div
+      class="image--description"
+      *ngIf="image_description"
+      [innerHTML]="image_description"
+    ></div>
+  </div>
+
+  <div class="description" [innerHTML]="description"></div>
+</div>

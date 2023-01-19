@@ -1,0 +1,51 @@
+<div class="main page">
+  <div class="top">
+    <img class="top--2" src="/assets/zagl_logo2.svg" alt="" />
+    <img class="top--3" src="/assets/zagl_logo-lines.svg" alt="" />
+    <img class="top--4" src="/assets/nadpis_ks.svg" alt="" />
+  </div>
+
+  <div class="infos">
+    <div class="infos-block">
+      <div class="title">ГДЕ РАСПОЛОЖЕНО?</div>
+      <div class="text">
+        Село Косая Степь – первый населённый пункт Ольхонского района, который
+        встречает проезжающих по дороге на Байкал. Расположено в 181 км от
+        областного центра – города Иркутска.
+      </div>
+      <img class="image" src="/assets/main/main2.jpg" alt="" />
+    </div>
+
+    <div class="infos-block">
+      <div class="title">ЧТО ПОСМОТРЕТЬ? ЧЕМ ЗАНЯТЬСЯ?</div>
+      <!--todo add map-->
+      <div class="text">
+        В Косой Степи не заскучают ни любители активного отдыха, ни ценители
+        древностей: окружающая природа так и зовёт прогуляться по горам и лесам,
+        а памятники истории и культуры пробуждают интерес к истории Приольхонья.
+      </div>
+      <img class="image" src="/assets/main/main3.jpg" alt="" />
+      <a class="asset" href=""
+        ><!--todo add link-->
+        <img src="/assets/icon-pdf.jpg" alt="" />
+        <span>Развлекательная программа</span>
+      </a>
+      <a class="asset" href=""
+        ><!--todo add link-->
+        <img src="/assets/icon-pdf.jpg" alt="" />
+        <span>Меню</span>
+      </a>
+    </div>
+
+    <div class="infos-block">
+      <div class="title">НАСЛАДИТЬСЯ ВИДАМИ</div>
+      <gallery
+        [style]="{ display: hideGallery ? 'none' : 'flex' }"
+        id="mainGallery"
+        gallerize
+        [loadingStrategy]="'preload'"
+        [items]="images"
+      ></gallery>
+    </div>
+  </div>
+</div>
