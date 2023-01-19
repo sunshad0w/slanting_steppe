@@ -7,7 +7,7 @@ import { DataBusService } from '../../core/services/data-bus.service';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  title = 'frontend-client';
+  title = 'Косая Степь';
   is404 = false;
 
   constructor(private DataBusService: DataBusService) {
