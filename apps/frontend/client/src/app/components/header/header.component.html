@@ -22,16 +22,15 @@
       routerLink="/"
       #mainPage="routerLinkActive"
       [routerLinkActiveOptions]="{ exact: true }"
-      >Главная</a
     >
+      Главная
+    </a>
     <a routerLinkActive="active-link" routerLink="/history">История</a>
     <a routerLinkActive="active-link" routerLink="/news">Новости</a>
     <a routerLinkActive="active-link" routerLink="/concept"
       >Концепция развития</a
     >
-    <a routerLinkActive="active-link" routerLink="/" fragment="contacts"
-      >Контакты</a
-    >
+    <a routerLink="/" fragment="contacts">Контакты</a>
   </div>
   <div class="navigation-links desktop">
     <a
@@ -46,9 +45,7 @@
     <a routerLinkActive="active-link" routerLink="/concept"
       >Концепция развития</a
     >
-    <a routerLinkActive="active-link" routerLink="/" fragment="contacts"
-      >Контакты</a
-    >
+    <a routerLink="/" fragment="contacts">Контакты</a>
   </div>
   <img class="lines desktop" src="/assets/stripes2 1.svg" alt="" />
   <div class="hart mobile" *ngIf="!mainPage.isActive">
