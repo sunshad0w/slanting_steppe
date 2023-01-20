@@ -39,15 +39,13 @@ import { HistoryPopupComponent } from './components/historyPopup/historyPopup.co
         ...{
           closeOnEscape: true,
           closeOnClickOutside: true,
-          // wrapperDefaultClasses: 'o-modal o-modal--fade',
-          // wrapperClass: 'o-modal--fade-in',
           animationDuration: 300,
           autoFocus: true,
         },
       }
     ),
     GalleryModule,
-    LightboxModule,
+    LightboxModule.withConfig({ panelClass: 'fullscreen', hasBackdrop: false }),
     BrowserAnimationsModule,
     BrowserModule,
     RouterModule.forRoot(appRoutes, {

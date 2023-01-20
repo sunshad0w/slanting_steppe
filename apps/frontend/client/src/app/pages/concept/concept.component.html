@@ -57,76 +57,232 @@
   </div>
 
   <div class="research-docs" [class.expanded]="isExpandDocs">
-    <!--    todo fill links-->
-    <div class="research-docs--title" (click)="expandDocs()">
-      Ознакомиться с результатами исследований
+    <div class="research-docs--title" (click)="toggleExpandDocs()">
+      <div>Ознакомиться с результатами исследований</div>
+      <div class="arrow"></div>
     </div>
-    <a class="research-docs--item" href="">
-      <div class="research-docs--icon">
-        <img src="/assets/icon-pdf.jpg" alt="" />
-      </div>
-      <span class="research-docs--text"
-        >Общая характеристика проведённых исследований</span
-      >
+    <a
+      class="research-docs--item"
+      [href]="research.href"
+      *ngFor="let research of researches"
+    >
+      <img src="/assets/icon-pdf.jpg" alt="" />
+      <span class="research-docs--text">{{ research.name }}</span>
     </a>
-    <a class="research-docs--item" href="">
-      <div class="research-docs--icon">
-        <img src="/assets/icon-pdf.jpg" alt="" />
-      </div>
-      <span class="research-docs--text">Историческая записка</span>
-    </a>
-    <a class="research-docs--item" href="">
-      <div class="research-docs--icon">
-        <img src="/assets/icon-pdf.jpg" alt="" />
-      </div>
-      <span class="research-docs--text"
-        >Отчёт по результатам социологического исследования</span
-      >
-    </a>
-    <a class="research-docs--item" href="">
-      <div class="research-docs--icon">
-        <img src="/assets/icon-pdf.jpg" alt="" />
-      </div>
-      <span class="research-docs--text"
-        >Эколого-географическая характеристика территории села и его
-        окружения</span
-      > </a
-    ><a class="research-docs--item" href="">
-      <div class="research-docs--icon">
-        <img src="/assets/icon-pdf.jpg" alt="" />
-      </div>
-      <span class="research-docs--text"
-        >Отчёт о текущем социально-экономическом положении села</span
-      >
-    </a>
-    <a class="research-docs--item" href="">
-      <div class="research-docs--icon">
-        <img src="/assets/icon-pdf.jpg" alt="" />
-      </div>
-      <span class="research-docs--text">Альбом фотофиксации</span>
-    </a>
-    <a class="research-docs--item" href="">
-      <div class="research-docs--icon">
-        <img src="/assets/icon-pdf.jpg" alt="" />
-      </div>
-      <span class="research-docs--text"
-        >Отчёт по результатам градостроительного обследования</span
-      >
-    </a>
+  </div>
 
+  <div class="research-docs expanded">
     <div class="research-docs--subtitle">
       Кроме исследований перед разработкой проектных решений также была
       проведена ссесия соучаствующего проектирования с жителями села.
     </div>
+    <!--    todo fill links-->
     <a class="research-docs--item" href="">
-      <div class="research-docs--icon">
-        <img src="/assets/icon-pdf.jpg" alt="" />
-      </div>
+      <img src="/assets/icon-pdf.jpg" alt="" />
       <span class="research-docs--text"
         >Отчёт по результатам соучаствующего проектирования</span
       >
     </a>
+  </div>
 
-    .
+  <div class="gallery" style="margin-bottom: 80px">
+    <div
+      class="gallery--item"
+      *ngFor="let item of getImageItems(reportImages); let i = index"
+      [lightbox]="i"
+      gallery="reports"
+    >
+      <div
+        class="gallery--image"
+        [style]="{
+          backgroundImage:
+            'url(' +
+            (item.data.thumb ? item.data.thumb : reportImages[i].src) +
+            ')'
+        }"
+      ></div>
+      <div class="gallery--item__title" *ngIf="item.data.alt">
+        {{ item.data.alt }}
+      </div>
+    </div>
+  </div>
+
+  <div class="image"><img src="/assets/concept/IMG_9733 1.jpg" alt="" /></div>
+
+  <div class="project-materials">
+    <div class="title">ПРОЕКТНЫЕ МАТЕРИАЛЫ</div>
+
+    <div class="subtitle">ОБЩИЕ СХЕМЫ</div>
+
+    <div class="gallery">
+      <div
+        class="gallery--item"
+        *ngFor="let item of getImageItems(schemaImages); let i = index"
+        [lightbox]="i"
+        gallery="schemas"
+      >
+        <div
+          class="gallery--image"
+          [style]="{
+            backgroundImage:
+              'url(' +
+              (item.data.thumb ? item.data.thumb : schemaImages[i].src) +
+              ')'
+          }"
+        ></div>
+        <div class="gallery--title" *ngIf="item.data.alt">
+          {{ item.data.alt }}
+        </div>
+      </div>
+    </div>
+
+    <div class="subtitle">ФРАГМЕНТЫ</div>
+
+    <div class="gallery">
+      <div
+        class="gallery--item"
+        *ngFor="let item of getImageItems(fragmentImages); let i = index"
+        [lightbox]="i"
+        gallery="fragments"
+      >
+        <div
+          class="gallery--image"
+          [style]="{
+            backgroundImage:
+              'url(' +
+              (item.data.thumb ? item.data.thumb : fragmentImages[i].src) +
+              ')'
+          }"
+        ></div>
+        <div class="gallery--title" *ngIf="item.data.alt">
+          {{ item.data.alt }}
+        </div>
+      </div>
+    </div>
+
+    <div class="subtitle">РАЗВЁРТКИ ПО УЛИЦАМ</div>
+    <div class="gallery">
+      <div
+        class="gallery--item"
+        *ngFor="let item of getImageItems(scanImages); let i = index"
+        [lightbox]="i"
+        gallery="scans"
+      >
+        <div
+          class="gallery--image"
+          [style]="{
+            backgroundImage:
+              'url(' +
+              (item.data.thumb ? item.data.thumb : scanImages[i].src) +
+              ')'
+          }"
+        ></div>
+        <div class="gallery--title" *ngIf="item.data.alt">
+          {{ item.data.alt }}
+        </div>
+      </div>
+    </div>
+
+    <div class="subtitle">3D ИЗОБРАЖЕНИЯ</div>
+    <div class="gallery">
+      <div
+        class="gallery--item"
+        *ngFor="let item of getImageItems(_3dsImages); let i = index"
+        [lightbox]="i"
+        gallery="_3ds"
+      >
+        <div
+          class="gallery--image"
+          [style]="{
+            backgroundImage:
+              'url(' +
+              (item.data.thumb ? item.data.thumb : _3dsImages[i].src) +
+              ')'
+          }"
+        ></div>
+        <div class="gallery--title" *ngIf="item.data.alt">
+          {{ item.data.alt }}
+        </div>
+      </div>
+    </div>
+
+    <div class="subtitle">АНАЛОГИ ЭЛЕМЕНТОВ</div>
+    <div class="gallery">
+      <div
+        class="gallery--item"
+        *ngFor="let item of getImageItems(analogImages); let i = index"
+        [lightbox]="i"
+        gallery="analogs"
+      >
+        <div
+          class="gallery--image"
+          [style]="{
+            backgroundImage:
+              'url(' +
+              (item.data.thumb ? item.data.thumb : analogImages[i].src) +
+              ')'
+          }"
+        ></div>
+        <div class="gallery--title" *ngIf="item.data.alt">
+          {{ item.data.alt }}
+        </div>
+      </div>
+    </div>
+
+    <div class="subtitle">БИЗНЕС-ПЛАНЫ И УКРУПНЁННЫЕ СМЕТЫ</div>
+    <div class="plans">
+      <a class="plans--item" *ngFor="let plan of plans" [href]="plan.href">
+        <img src="/assets/icon-pdf.jpg" alt="" />
+        <span>{{ plan.name }}</span>
+      </a>
+    </div>
+  </div>
+
+  <img class="lines" src="/assets/zagl_logo-lines.svg" alt="" />
+
+  <h3>АВТОРСКИЙ КОЛЛЕКТИВ</h3>
+  <div class="authors">
+    <div class="creators">
+      <div class="creators--item">Алёна Бобрышева</div>
+      <div class="creators--item">Евгения Кузнецова</div>
+      <div class="creators--item">Екатерина Матель</div>
+    </div>
+    <div class="workers">
+      <div class="work">Исторические исследования</div>
+      <div class="name">Игорь Жидиль</div>
+      <div class="work">Социологические исследования</div>
+      <div class="name">Татьяна Тимофеева</div>
+      <div class="work">Эколого-географические исследования</div>
+      <div class="name">
+        Татьяна Заборцева <br />
+        Оксана Евстропьева
+      </div>
+      <div class="work">Экономическая часть</div>
+      <div class="name">
+        Евгения Кензина <br />
+        Дмитрий Годван
+      </div>
+      <div class="work" style="margin-left: -18px">
+        Ортофотоплан и цифровая модель поверхности
+      </div>
+      <div class="name">Данил Колтович</div>
+      <div class="work">Разработка сайта</div>
+      <div class="name">Олег Паздников</div>
+    </div>
+  </div>
+  <h3>БЛАГОДАРНОСТИ</h3>
+
+  <div class="greats">
+    Команда проекта благодарит администрацию Куретского МО и лично Алексея
+    Копейкина, Татьяну Копылову, Аллу Мироненко, Ольгу Янковскую, Лидию
+    Захарову, Ксению Пономарёву, Анастасию Хон, Сергея Мядзельца, Клавдию
+    Платоновну Болотову, Светлану Дмитриевну Фрик, Наталью Николаевну Попову,
+    Галину Фёдоровну Зеленину, Светлану Николаевну Рыкову, Татьяну Андреевну
+    Зуеву, Снежану Попову, Солодова Дмитрия, Солодову Маргариту, Умского Андрея,
+    Николая Рыкова, Александру Кушкову, Екатерину Довгий, Ирину Рябову, Алексея
+    Чертилова, ТОС “Рассвет”, Центр независимых социальных исследований и лично
+    Михаила Рожанского, Олесю Олеговну Резанову и Марину Леонидовну Адейкину,
+    Елену Малышкину, Центр оперативной печати “Си-лайн” и лично Ярослава
+    Овсянникова, а также Байкальский банк ПАО Сбербанк
   </div>
 </div>

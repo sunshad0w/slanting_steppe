@@ -26,8 +26,6 @@ import {
         'true',
         style({
           transform: 'translateX(-100%)',
-          // opacity: '0',
-          // visibility: 'hidden',
         })
       ),
       transition('false => true', animate('250ms ease-in')),

@@ -15,10 +15,14 @@
     </div>
   </div>
   <div class="timeline">
-    <div class="timeline-item" *ngFor="let item of items">
+    <div
+      class="timeline-item"
+      *ngFor="let item of items"
+      (click)="showHistoryPopup(item)"
+    >
       <div class="title">{{ item.title }}</div>
       <div class="middle">
-        <div class="point-container" (click)="showHistoryPopup(item)">
+        <div class="point-container">
           <div class="point"></div>
         </div>
       </div>

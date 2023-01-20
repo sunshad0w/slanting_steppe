@@ -9,6 +9,7 @@
       "executor": "@angular-devkit/build-angular:browser",
       "outputs": ["{options.outputPath}"],
       "options": {
+        "allowedCommonJsDependencies": ["bezier-easing"],
         "outputPath": "dist/apps/frontend/client",
         "index": "apps/frontend/client/src/index.html",
         "main": "apps/frontend/client/src/main.ts",

@@ -34,7 +34,6 @@
     max-width: 465px;
     bottom: min(10vh, 60px);
     @include media-down($media-md) {
-      //bottom: 100px;
       max-width: 265px;
     }
   }
@@ -43,7 +42,7 @@
 .infos {
   display: grid;
   justify-content: center;
-  padding: 20px;
+  //padding: 20px;
   &-block {
     width: 100%;
     max-width: min(660px, 100%);
@@ -51,6 +50,9 @@
   }
 
   .title {
+    @include media-down($media-md) {
+      padding: 0 20px;
+    }
     font-weight: 600;
     font-size: 24px;
     line-height: 29px;
@@ -60,6 +62,9 @@
   }
 
   .text {
+    @include media-down($media-md) {
+      padding: 0 20px;
+    }
     font-weight: 400;
     font-size: 16px;
     line-height: 20px;
@@ -71,12 +76,16 @@
   }
 
   .asset {
+    @include media-down($media-md) {
+      padding: 0 20px;
+    }
     margin-top: 16px;
     display: grid;
     grid-template-columns: 32px auto;
     grid-gap: 24px;
     align-items: center;
     text-decoration: none;
+    color: black;
   }
 }
 
