@@ -27,18 +27,32 @@
     }
   }
   .links {
-    display: flex;
-    flex-wrap: wrap;
-    max-width: min(400px, 100%);
+    //display: flex;
+    //flex-wrap: wrap;
+    display: grid;
+    grid-template:
+      'a b' 1fr
+      'c d' 1fr
+      'e e' auto;
+    max-width: min(440px, 100%);
     a {
       flex-basis: 50%;
       align-items: center;
-      justify-content: center;
+      justify-content: flex-end;
       display: flex;
       padding: 10px;
       flex-grow: 1;
+      flex-direction: column;
+      text-decoration: none;
       img {
         width: 100%;
+      }
+      span {
+        margin-top: 10px;
+        font-size: 14px;
+        line-height: 17px;
+        text-align: center;
+        color: #c4c4c4;
       }
     }
   }

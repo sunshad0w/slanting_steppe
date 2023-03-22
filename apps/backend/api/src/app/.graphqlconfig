@@ -1,0 +1,23 @@
+{
+  "name": "slanting steppe GraphQL Schema",
+  "schemaPath": "./schema.gql",
+  "projects": {
+    "api": {
+      "includes": [
+        "./users/*.gql",
+        "./auth/*.gql"
+      ]
+    }
+  },
+  "extensions": {
+    "endpoints": {
+      "Default GraphQL Endpoint": {
+        "url": "http://localhost:3333/graphql",
+        "headers": {
+          "user-agent": "JS GraphQL"
+        },
+        "introspect": false
+      }
+    }
+  }
+}

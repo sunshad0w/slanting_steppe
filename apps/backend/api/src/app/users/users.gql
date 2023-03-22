@@ -1,0 +1,11 @@
+extend type Query {
+  user(id: ID): User
+}
+
+type User {
+  created: Date
+  email: String
+  id: ID
+  updated: Date
+  username: String
+}

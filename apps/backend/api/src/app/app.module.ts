@@ -1,22 +1,52 @@
 import { Module } from '@nestjs/common';
 
 import { AppController } from './app.controller';
-import { TypeOrmModule } from '@nestjs/typeorm';
-import { environment } from '../environments/environment';
+// import { TypeOrmModule } from '@nestjs/typeorm';
+// import { environment } from '../environments/environment';
 import { GraphQLModule } from '@nestjs/graphql';
 import { ApolloDriver, ApolloDriverConfig } from '@nestjs/apollo';
-import { AppResolver } from './app.resolver';
+import { UsersModule } from './users/users.module';
+import { AuthModule } from './auth/auth.module';
+import { resolverMap } from './app.resolver';
+import { databaseProviders } from './database/database.providers';
+import { environment } from '../environments/environment';
+import { SequelizeModule } from '@nestjs/sequelize';
+// import { getTypeOrmModuleOptions } from '../../../../../ormconfig';
+// import { UserEntity } from './users/entities/user.entity';
+// import { User1679026308386 } from '../migrations/1679026308386-User';
 
 @Module({
   imports: [
-    TypeOrmModule.forRoot({ ...environment.connection }),
+    /* TypeOrmModule.forRoot({
+      ...environment.connection,
+      entities: [UserEntity],
+      migrations: [User1679026308386],
+      migrationsRun: true,
+    }),*/
+    /*  TypeOrmModule.forRootAsync({
+      useFactory: () => ({ ...getTypeOrmModuleOptions() }),
+    }),*/
+    SequelizeModule.forRoot({
+      dialect: environment.connection.type,
+      host: environment.connection.host,
+      port: environment.connection.port,
+      username: environment.connection.username,
+      password: environment.connection.password,
+      database: environment.connection.database,
+      autoLoadModels: true,
+      synchronize: true,
+    }),
     GraphQLModule.forRoot<ApolloDriverConfig>({
+      typePaths: ['./**/*.gql'],
+      context: ({ req }) => ({ req }),
       playground: true,
       driver: ApolloDriver,
-      autoSchemaFile: 'schema.gql',
+      resolvers: [resolverMap],
     }),
+    UsersModule,
+    AuthModule,
   ],
   controllers: [AppController],
-  providers: [AppResolver],
+  providers: [...databaseProviders],
 })
 export class AppModule {}

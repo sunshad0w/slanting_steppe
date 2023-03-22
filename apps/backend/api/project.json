@@ -1,6 +1,6 @@
 {
   "name": "backend-api",
-  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "$schema": "../../../node_modules/nx/schemas/proj ect-schema.json",
   "sourceRoot": "apps/backend/api/src",
   "projectType": "application",
   "targets": {
