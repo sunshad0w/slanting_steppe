@@ -33,3 +33,11 @@ body {
 * {
   box-sizing: border-box;
 }
+
+gallery-thumbs .g-slider gallery-thumb,
+lightbox gallery {
+  background-color: #9e9e9c !important;
+}
+gallery-core[counterPosition='top'] .g-counter {
+  margin-left: -60px;
+}

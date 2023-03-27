@@ -162,6 +162,24 @@
     text-align: center;
   }
 
+  .scan {
+    overflow-x: auto;
+    height: min(100vh, 100vw, 300px);
+    overflow-y: hidden;
+    img {
+      height: 100%;
+    }
+  }
+  .scan-title {
+    font-style: italic;
+    font-weight: 300;
+    font-size: 12px;
+    line-height: 15px;
+    text-align: center;
+    color: #919191;
+    margin-top: 10px;
+  }
+
   .plans {
     display: flex;
     flex-wrap: wrap;

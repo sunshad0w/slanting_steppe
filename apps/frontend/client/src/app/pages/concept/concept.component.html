@@ -76,8 +76,11 @@
       Кроме исследований перед разработкой проектных решений также была
       проведена ссесия соучаствующего проектирования с жителями села.
     </div>
-    <!--    todo fill links-->
-    <a class="research-docs--item" href="">
+    <a
+      class="research-docs--item"
+      target="_blank"
+      href="/assets/concept/Отчет_о_соучаствующем_проектировании.pdf"
+    >
       <img src="/assets/icon-pdf.jpg" alt="" />
       <span class="research-docs--text"
         >Отчёт по результатам соучаствующего проектирования</span
@@ -168,27 +171,20 @@
     </div>
 
     <div class="subtitle">РАЗВЁРТКИ ПО УЛИЦАМ</div>
-    <div class="gallery">
-      <div
-        class="gallery--item"
-        *ngFor="let item of getImageItems(galleries['scans']); let i = index"
-        [lightbox]="i"
-        gallery="scans"
-      >
-        <div
-          class="gallery--image"
-          [style]="{
-            backgroundImage:
-              'url(' +
-              (item.data.thumb ? item.data.thumb : galleries['scans'][i].src) +
-              ')'
-          }"
-        ></div>
-        <div class="gallery--title" *ngIf="item.data.alt">
-          {{ item.data.alt }}
-        </div>
-      </div>
+    <div class="scan">
+      <img src="/assets/concept/Развёртка 1.png" alt="" />
     </div>
+    <div class="scan-title">Улица Верховая. Нечётная сторона</div>
+
+    <div class="scan">
+      <img src="/assets/concept/Развёртка 2.png" alt="" />
+    </div>
+    <div class="scan-title">Улица Верховая. Чётная сторона</div>
+
+    <div class="scan">
+      <img src="/assets/concept/Развёртка 3.png" alt="" />
+    </div>
+    <div class="scan-title">Улица Похарик. Чётная сторона</div>
 
     <div class="subtitle">3D ИЗОБРАЖЕНИЯ</div>
     <div class="gallery">
@@ -240,7 +236,12 @@
 
     <div class="subtitle">БИЗНЕС-ПЛАНЫ И УКРУПНЁННЫЕ СМЕТЫ</div>
     <div class="plans">
-      <a class="plans--item" *ngFor="let plan of plans" [href]="plan.href">
+      <a
+        class="plans--item"
+        target="_blank"
+        *ngFor="let plan of plans"
+        [href]="plan.href"
+      >
         <img src="/assets/icon-pdf.jpg" alt="" />
         <span>{{ plan.name }}</span>
       </a>

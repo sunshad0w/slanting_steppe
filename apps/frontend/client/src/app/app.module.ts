@@ -44,8 +44,12 @@ import { HistoryPopupComponent } from './components/historyPopup/historyPopup.co
         },
       }
     ),
-    GalleryModule,
-    LightboxModule.withConfig({ panelClass: 'fullscreen', hasBackdrop: false }),
+    GalleryModule.withConfig({}),
+    LightboxModule.withConfig({
+      panelClass: 'fullscreen',
+      hasBackdrop: false,
+      backdropClass: 'backdropClass',
+    }),
     BrowserAnimationsModule,
     BrowserModule,
     RouterModule.forRoot(appRoutes, {
