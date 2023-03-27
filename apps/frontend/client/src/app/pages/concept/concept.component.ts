@@ -208,7 +208,6 @@ export class ConceptPageComponent implements AfterViewInit {
     ],
   };
 
-  // todo fill hrefs
   researches: { name: string; href: string }[] = [
     { name: 'Общая характеристика проведённых исследований', href: '' },
     { name: 'Историческая записка', href: '' },
@@ -294,7 +293,7 @@ export class ConceptPageComponent implements AfterViewInit {
       document.querySelectorAll('.scan').forEach((s) => {
         s.scrollLeft = s.scrollWidth / 2;
       });
-    }, 5000);
+    }, 3000);
   }
 
   toggleExpandDocs() {
