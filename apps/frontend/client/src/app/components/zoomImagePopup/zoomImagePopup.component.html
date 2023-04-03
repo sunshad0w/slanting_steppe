@@ -1,0 +1,6 @@
+<div class="zoomImagePopup">
+  <pinch-zoom [disablePan]="false" [draggableImage]="true" [limitPan]="false">
+    <img [src]="image" />
+  </pinch-zoom>
+  <div class="close" (click)="close()">x</div>
+</div>

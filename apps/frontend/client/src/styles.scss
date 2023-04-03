@@ -41,3 +41,7 @@ lightbox gallery {
 gallery-core[counterPosition='top'] .g-counter {
   margin-left: -60px;
 }
+
+.modal {
+  z-index: 1000 !important;
+}

@@ -17,6 +17,8 @@ import { GalleryModule } from 'ng-gallery';
 import { LightboxModule } from 'ng-gallery/lightbox';
 import { defaultSimpleModalOptions, SimpleModalModule } from 'ngx-simple-modal';
 import { HistoryPopupComponent } from './components/historyPopup/historyPopup.component';
+import { PinchZoomModule } from 'ngx-pinch-zoom';
+import { ZoomImagePopupComponent } from './components/zoomImagePopup/zoomImagePopup.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +32,7 @@ import { HistoryPopupComponent } from './components/historyPopup/historyPopup.co
     _404PageComponent,
     HamburgerToggleDirective,
     HistoryPopupComponent,
+    ZoomImagePopupComponent,
   ],
   imports: [
     SimpleModalModule.forRoot(
@@ -56,6 +59,7 @@ import { HistoryPopupComponent } from './components/historyPopup/historyPopup.co
       initialNavigation: 'enabledBlocking',
       anchorScrolling: 'enabled',
     }),
+    PinchZoomModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

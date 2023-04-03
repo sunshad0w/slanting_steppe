@@ -10,7 +10,7 @@ export interface IHistoryPopup {
 }
 
 @Component({
-  selector: 'ss-root',
+  selector: 'ss-history-popup',
   templateUrl: './historyPopup.component.html',
   styleUrls: ['./historyPopup.component.scss'],
 })

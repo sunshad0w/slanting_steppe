@@ -279,3 +279,18 @@ ol {
     margin-bottom: 1em;
   }
 }
+
+.zoomBlock {
+  margin-top: 30px;
+
+  .title {
+    margin-bottom: 20px;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 20px;
+    text-align: center;
+  }
+  pinch-zoom {
+    cursor: pointer;
+  }
+}
