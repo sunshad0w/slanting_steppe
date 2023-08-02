@@ -1,19 +1,14 @@
 import { Module } from '@nestjs/common';
 
 import { AppController } from './app.controller';
-// import { TypeOrmModule } from '@nestjs/typeorm';
-// import { environment } from '../environments/environment';
 import { GraphQLModule } from '@nestjs/graphql';
 import { ApolloDriver, ApolloDriverConfig } from '@nestjs/apollo';
 import { UsersModule } from './users/users.module';
 import { AuthModule } from './auth/auth.module';
 import { resolverMap } from './app.resolver';
-import { databaseProviders } from './database/database.providers';
+// import { databaseProviders } from './database/database.providers';
 import { environment } from '../environments/environment';
 import { SequelizeModule } from '@nestjs/sequelize';
-// import { getTypeOrmModuleOptions } from '../../../../../ormconfig';
-// import { UserEntity } from './users/entities/user.entity';
-// import { User1679026308386 } from '../migrations/1679026308386-User';
 
 @Module({
   imports: [
@@ -47,6 +42,6 @@ import { SequelizeModule } from '@nestjs/sequelize';
     AuthModule,
   ],
   controllers: [AppController],
-  providers: [...databaseProviders],
+  // providers: [...databaseProviders],
 })
 export class AppModule {}
